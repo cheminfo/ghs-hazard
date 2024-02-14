@@ -14,6 +14,7 @@
     "lib-esm"
   ],
   "scripts": {
+    "build": "npm run tsc-esm && cheminfo-build --entry lib-esm/index.js --root GHS",
     "check-types": "tsc --noEmit",
     "clean": "rimraf lib lib-esm",
     "eslint": "eslint src --cache",
@@ -39,6 +40,7 @@
     "@babel/plugin-transform-modules-commonjs": "^7.23.3",
     "@babel/preset-typescript": "^7.23.3",
     "@types/jest": "^29.5.12",
+    "cheminfo-build": "^1.2.0",
     "eslint": "^8.56.0",
     "eslint-config-cheminfo-typescript": "^12.2.0",
     "prettier": "^3.2.5",
