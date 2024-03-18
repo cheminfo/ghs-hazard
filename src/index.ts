@@ -2,18 +2,18 @@ import { ghs } from './data/ghscode_10';
 
 export interface GHS {
   code: string;
-  ghsPictogramText: string;
-  pictogramsVG: string;
+  label: string;
+  svg: string;
 }
 
 export interface HStatement {
-  hCode: string;
-  hStatement: string;
+  code: string;
+  statement: string;
 }
 
 export interface PStatement {
   code: string;
-  pStatement: string;
+  statement: string;
 }
 
 export function getHStatements(): HStatement[] {
