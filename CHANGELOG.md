@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.0](https://github.com/cheminfo/ghs-hazard/compare/v0.0.1...v0.1.0) (2024-03-18)
+
+
+### Features
+
+* rename properties ([71a927a](https://github.com/cheminfo/ghs-hazard/commit/71a927acaaca8007bd2952d80ada0d8c686503ce))
+
 ## 0.0.1 (2024-02-14)
 
 
