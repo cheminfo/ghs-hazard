@@ -1,6 +1,6 @@
 import { readFileSync } from 'fs';
 
-const ghsPictogramText = {
+const ghsPictogramLabel = {
   GHS01: 'Explosive',
   GHS02: 'Flammable',
   GHS03: 'Oxidizing',
@@ -14,11 +14,11 @@ const ghsPictogramText = {
 
 export function getGHSPictograms() {
   const results = []
-  for (const key in ghsPictogramText) {
+  for (const key in ghsPictogramLabel) {
     results.push({
-      ghsCode: key,
-      ghsPictogramText: ghsPictogramText[key],
-      ghsPictogramSVG: readFileSync(new URL(`${key.replace('GHS0', '')}.svg`, import.meta.url), 'utf-8')
+      code: key,
+      label: ghsPictogramLabel[key],
+      svg: readFileSync(new URL(`${key.replace('GHS0', '')}.svg`, import.meta.url), 'utf-8')
     })
   }
   return results

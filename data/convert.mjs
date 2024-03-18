@@ -11,10 +11,10 @@ const parsed = loadFile(`${filename}.txt`)
 
 for (const key in euh) {
   parsed.hStatements.push({
-    hCode: key,
-    hStatement: euh[key]
+    code: key,
+    statement: euh[key]
   })
 }
-parsed.ghsPictograms = getGHSPictograms()
+parsed.pictograms = getGHSPictograms()
 
 writeFileSync(new URL(`../src/data/${filename}.ts`, import.meta.url), `export const ghs=${JSON.stringify(parsed, undefined, 2)}`)

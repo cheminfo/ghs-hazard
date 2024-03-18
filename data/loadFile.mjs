@@ -22,13 +22,13 @@ function parseHs(hs) {
   for (const h of hs) {
     const [hCode, hStatement, ghsHazardClass, ghzHazardCategory, unused, ghsPictogram, ghsSignalWord, pCode] = h.trim().split('\t').map(f => f.trim());
     //results.push({ hCode, hStatement, ghsHazardClass, ghzHazardCategory, unused, ghsPictogram, ghsSignalWord, pCodes: pCode ? pCode.split(',') : [] });
-    const existing = results.find(r => r.hCode === hCode);
+    const existing = results.find(r => r.code === hCode);
     if (existing) {
-      if (existing.hStatement !== hStatement) {
+      if (existing.statement !== hStatement) {
         throw new Error(`Duplicate H code with different ${hStatement}`);
       }
     } else {
-      results.push({ hCode, hStatement });
+      results.push({ code: hCode, statement: hStatement });
     }
   }
   return results;
@@ -38,7 +38,7 @@ function parsePs(ps) {
   const results = [];
   for (const p of ps) {
     const [pCode, pStatement] = p.split('\t');
-    results.push({ pCode, pStatement });
+    results.push({ code: pCode, statement: pStatement });
   }
   return results
 }
