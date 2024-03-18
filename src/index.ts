@@ -1,9 +1,9 @@
 import { ghs } from './data/ghscode_10';
 
 export interface GHS {
-  ghsCode: string;
+  code: string;
   ghsPictogramText: string;
-  ghsPictogramSVG: string;
+  pictogramsVG: string;
 }
 
 export interface HStatement {
@@ -12,7 +12,7 @@ export interface HStatement {
 }
 
 export interface PStatement {
-  pCode: string;
+  code: string;
   pStatement: string;
 }
 
@@ -23,10 +23,10 @@ export function getHStatements(): HStatement[] {
 export function getHStatementsObject() {
   const result: Record<string, HStatement> = {};
   ghs.hStatements.forEach((h) => {
-    if (result[h.hCode]) {
-      throw new Error(`This should never happen, duplice hCode: ${h.hCode}`);
+    if (result[h.code]) {
+      throw new Error(`This should never happen, duplice hCode: ${h.code}`);
     }
-    result[h.hCode] = h;
+    result[h.code] = h;
   });
   return result;
 }
@@ -38,25 +38,25 @@ export function getPStatements(): PStatement[] {
 export function getPStatementsObject() {
   const result: Record<string, PStatement> = {};
   ghs.pStatements.forEach((p) => {
-    if (result[p.pCode]) {
-      throw new Error(`This should never happen, duplice pCode: ${p.pCode}`);
+    if (result[p.code]) {
+      throw new Error(`This should never happen, duplice code: ${p.code}`);
     }
-    result[p.pCode] = p;
+    result[p.code] = p;
   });
   return result;
 }
 
 export function getGHS(): GHS[] {
-  return ghs.ghsPictograms;
+  return ghs.pictograms;
 }
 
 export function getGHSObject() {
   const result: Record<string, GHS> = {};
-  ghs.ghsPictograms.forEach((g) => {
-    if (result[g.ghsCode]) {
-      throw new Error(`This should never happen, duplice code: ${g.ghsCode}`);
+  ghs.pictograms.forEach((g) => {
+    if (result[g.code]) {
+      throw new Error(`This should never happen, duplice code: ${g.code}`);
     }
-    result[g.ghsCode] = g;
+    result[g.code] = g;
   });
   return result;
 }
